@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 251 100% 99%;
+    --foreground: 231 36% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 231 36% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 231 36% 14%;
+
+    --primary: 253 91% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 50% 96%;
+    --secondary-foreground: 231 36% 14%;
+
+    --muted: 246 32% 95%;
+    --muted-foreground: 231 16% 46%;
+
+    --accent: 249 58% 93%;
+    --accent-foreground: 253 91% 67%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 246 26% 90%;
+    --input: 246 26% 90%;
+    --ring: 253 91% 67%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 251 100% 99%;
+    --sidebar-foreground: 231 36% 14%;
+    --sidebar-primary: 253 91% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 249 58% 93%;
+    --sidebar-accent-foreground: 253 91% 67%;
+    --sidebar-border: 246 26% 90%;
+    --sidebar-ring: 253 91% 67%;
+  }
+
+  .dark {
+    --background: 231 36% 8%;
+    --foreground: 251 100% 99%;
+
+    --card: 231 36% 10%;
+    --card-foreground: 251 100% 99%;
+
+    --popover: 231 36% 10%;
+    --popover-foreground: 251 100% 99%;
+
+    --primary: 253 91% 67%;
+    --primary-foreground: 231 36% 8%;
+
+    --secondary: 231 25% 15%;
+    --secondary-foreground: 251 100% 99%;
+
+    --muted: 231 25% 15%;
+    --muted-foreground: 231 16% 65%;
+
+    --accent: 231 25% 15%;
+    --accent-foreground: 253 91% 67%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 251 100% 99%;
+
+    --border: 231 25% 15%;
+    --input: 231 25% 15%;
+    --ring: 253 91% 67%;
+
+    --sidebar-background: 231 36% 8%;
+    --sidebar-foreground: 251 100% 99%;
+    --sidebar-primary: 253 91% 67%;
+    --sidebar-primary-foreground: 231 36% 8%;
+    --sidebar-accent: 231 25% 15%;
+    --sidebar-accent-foreground: 253 91% 67%;
+    --sidebar-border: 231 25% 15%;
+    --sidebar-ring: 253 91% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-border/80;
+  }
+
+  /* Smooth animations */
+  * {
+    @apply transition-colors duration-200;
+  }
+}
